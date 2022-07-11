@@ -21,6 +21,7 @@ namespace Ex5_MazeGame
         private bool enemies;
         private bool chest;
         private List<Item> content;
+        private Tuple mapPos;
 
 
         public Room(string name, string paint,bool lights, bool enemies, bool chest, bool isOpened )

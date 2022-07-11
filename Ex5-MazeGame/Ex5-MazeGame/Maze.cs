@@ -76,6 +76,14 @@ namespace Ex5_MazeGame
             exit.setConnectedRoom(zeusChallenge, null, null, null);
         }
 
+        public void updateMap(System.Drawing.Graphics map, System.Drawing.SolidBrush pen)
+        {
+
+            map.FillRectangle(pen, 50, 10, 20, 10);
+            pen.Dispose();
+            map.Dispose();
+        }
+
         public Room getStartRoom()
         {
             return this.startRoom;
