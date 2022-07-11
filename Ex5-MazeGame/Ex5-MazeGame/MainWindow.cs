@@ -15,14 +15,22 @@ namespace Ex5_MazeGame
 
         private Maze maze;
         private Player player;
+        private Enemy zeus;
 
         public MainWindow()
         {
             InitializeComponent();
             this.maze = new Maze();
             this.player = new Player(maze.getStartRoom());
+            this.zeus = new Enemy("Zeus", 30, maze.getChallengeRoom());
             updatePlayer();
             updateRoom();
+        }
+
+
+        private void updateEnemy()
+        {
+
         }
 
         private void updatePlayer()
@@ -32,6 +40,16 @@ namespace Ex5_MazeGame
             foreach (Item it in this.player.getBag())
             {
                 this.playerItems.Items.Add(it);
+            }
+
+            int maxHP = this.player.getMaxHP();
+            int HP = this.player.getHP();
+            this.hpLabel.Text ="HP: "+  HP + "/" + maxHP;
+
+            if(HP <= 0)
+            {
+                MessageBox.Show("You died!");
+                Close();
             }
 
         }
@@ -189,6 +207,11 @@ namespace Ex5_MazeGame
             
 
             
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

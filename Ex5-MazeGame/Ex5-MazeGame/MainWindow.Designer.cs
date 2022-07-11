@@ -47,6 +47,7 @@ namespace Ex5_MazeGame
             this.dropButton = new System.Windows.Forms.Button();
             this.pickUpButton = new System.Windows.Forms.Button();
             this.useButton = new System.Windows.Forms.Button();
+            this.hpLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // northButton
@@ -217,11 +218,23 @@ namespace Ex5_MazeGame
             this.useButton.Text = "Use";
             this.useButton.UseVisualStyleBackColor = true;
             // 
+            // hpLabel
+            // 
+            this.hpLabel.AutoSize = true;
+            this.hpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hpLabel.Location = new System.Drawing.Point(545, 436);
+            this.hpLabel.Name = "hpLabel";
+            this.hpLabel.Size = new System.Drawing.Size(62, 29);
+            this.hpLabel.TabIndex = 17;
+            this.hpLabel.Text = "HP: ";
+            this.hpLabel.Click += new System.EventHandler(this.label7_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 483);
+            this.Controls.Add(this.hpLabel);
             this.Controls.Add(this.useButton);
             this.Controls.Add(this.pickUpButton);
             this.Controls.Add(this.dropButton);
@@ -269,6 +282,7 @@ namespace Ex5_MazeGame
         private System.Windows.Forms.Button dropButton;
         private System.Windows.Forms.Button pickUpButton;
         private System.Windows.Forms.Button useButton;
+        private System.Windows.Forms.Label hpLabel;
     }
 }
 
