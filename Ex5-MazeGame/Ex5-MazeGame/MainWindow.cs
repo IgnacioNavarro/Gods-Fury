@@ -17,6 +17,7 @@ namespace Ex5_MazeGame
         private Player player;
         private Graphics map;
         private SolidBrush pen;
+        private Enemy zeus;
 
         public MainWindow()
         {
@@ -25,8 +26,15 @@ namespace Ex5_MazeGame
             this.maze = new Maze();
             pen=new SolidBrush(Color.Black);
             this.player = new Player(maze.getStartRoom());
+            this.zeus = new Enemy("Zeus", 30, maze.getChallengeRoom());
             updatePlayer();
             updateRoom();
+        }
+
+
+        private void updateEnemy()
+        {
+
         }
 
         private void updatePlayer()
@@ -36,6 +44,16 @@ namespace Ex5_MazeGame
             foreach (Item it in this.player.getBag())
             {
                 this.playerItems.Items.Add(it);
+            }
+
+            int maxHP = this.player.getMaxHP();
+            int HP = this.player.getHP();
+            this.hpLabel.Text ="HP: "+  HP + "/" + maxHP;
+
+            if(HP <= 0)
+            {
+                MessageBox.Show("You died!");
+                Close();
             }
 
         }
@@ -105,7 +123,7 @@ namespace Ex5_MazeGame
                 MessageBox.Show("The door is closed");
             }
 
-            maze.updateMap(map, pen);
+            //maze.updateMap(map, pen);
 
         }
 
@@ -224,6 +242,11 @@ namespace Ex5_MazeGame
             
 
             
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,6 +12,8 @@ namespace Ex5_MazeGame
         private List<Item> bag;
 
         private Maze maze;
+        private int maxHP;
+        private int HP;
 
 
         public Player(Room currentRoom)
@@ -19,6 +21,8 @@ namespace Ex5_MazeGame
             this.currentRoom = currentRoom;
             this.bag = new List<Item>();
             this.maze = new Maze();
+            this.maxHP = 30;
+            this.HP = this.maxHP;
             /*
             //add items to the bag
             Item lightning = new Item("Lightning", true);
@@ -29,6 +33,16 @@ namespace Ex5_MazeGame
             addToBag(rock);
             addToBag(bigRock);
             */
+        }
+
+        public int getMaxHP()
+        {
+            return this.maxHP;
+        }
+
+        public int getHP()
+        {
+            return this.HP;
         }
 
         public Room getCurrentRoom()
@@ -66,11 +80,30 @@ namespace Ex5_MazeGame
             this.bag.Remove(item);
         }
 
-        ///////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////
-        //
-        //
-        //
+        public void getHeal(int heal)
+        {
+            if((this.HP +heal)  >= this.maxHP ){
+                this .HP = this.maxHP;
+            }
+            else
+            {
+                this.HP += heal; 
+            }
+        }
+
+        public void getDamage(int damage)
+        {
+            if(damage >= this.HP)
+            {
+                this.HP = 0;
+                //you die
+            }
+            else
+            {
+                this.HP -= damage;
+            }
+        }
+
         public String move(char direction)
         {
 
