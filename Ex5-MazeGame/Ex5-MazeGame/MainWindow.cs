@@ -15,12 +15,16 @@ namespace Ex5_MazeGame
 
         private Maze maze;
         private Player player;
+        private Graphics map;
+        private SolidBrush pen;
         private Enemy zeus;
 
         public MainWindow()
         {
             InitializeComponent();
+            map=pictureBox1.CreateGraphics();
             this.maze = new Maze();
+            pen=new SolidBrush(Color.Black);
             this.player = new Player(maze.getStartRoom());
             this.zeus = new Enemy("Zeus", 30, maze.getChallengeRoom());
             updatePlayer();
@@ -56,6 +60,7 @@ namespace Ex5_MazeGame
 
         private void updateRoom()
         {
+
             this.currentRoom.Text = this.player.getCurrentRoom().getName();
             
             //Room items
@@ -68,20 +73,22 @@ namespace Ex5_MazeGame
 
         }
 
-        private void movePlayer(char direction)
+
+        ///////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
+        //
+        //
+        //
+
+        private void reqMovePlayer(char direction)
         {
             String move = player.move(direction);
-            if (player.getCurrentRoom().getConnectedRoom('S') == maze.getChallengeRoom() && direction == 'S')
-                {
-                    DialogResult d = MessageBox.Show("You will have to face Zeus to scape. Are you ready?", "", MessageBoxButtons.YesNo);
-                    if (d == DialogResult.No)
-                    {
-                        move = "";
-                    }
-                }
 
-            if (move=="open")
+            //MessageBox.Show(move);
+
+            if (move == "open")
             {
+                player.setCurrentRoom(player.getCurrentRoom().getConnectedRoom(direction));
                 this.updateRoom();
                 if (player.getCurrentRoom() == maze.getWinningRoom())
                 {
@@ -90,24 +97,41 @@ namespace Ex5_MazeGame
                 }
                 else if (player.getCurrentRoom() == maze.getLosingRoom())
                 {
-                    MessageBox.Show("You died :(");
-                    Close();
+                    MessageBox.Show("The torture room is full of unbelievable hideous images, decomposing bodies and bloodthirsty torture weapons. You can't help throwing up. You loose hp");
 
                 }
-                else 
+                else
                 {
-                    
+
                 }
             }
-            else if(move == "wall")
+            else if (move == "wall")
             {
                 MessageBox.Show("That's a wall, stupid!");
             }
-            else
+            else if (move == "challenge")
             {
-                player.move('N');
+                DialogResult d = MessageBox.Show("You will have to face Zeus to scape. Are you ready?", "", MessageBoxButtons.YesNo);
+                if (d == DialogResult.Yes)
+                {
+                    player.setCurrentRoom(player.getCurrentRoom().getConnectedRoom(direction));
+                    this.updateRoom();
+                }
             }
+            else if (move == "closed")
+            {
+                MessageBox.Show("The door is closed");
+            }
+
+            maze.updateMap(map, pen);
+
         }
+
+        //
+        //
+        //
+        ///////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
 
 
         private void label2_Click(object sender, EventArgs e)
@@ -125,25 +149,36 @@ namespace Ex5_MazeGame
 
         }
 
+
+        ///////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
+        //
+        //
+        //
         private void northButton_Click(object sender, EventArgs e)
         {
-            movePlayer('N');
+            reqMovePlayer('N');
         }
 
         private void eastButton_Click(object sender, EventArgs e)
         {
-            movePlayer('E');
+            reqMovePlayer('E');
         }
 
         private void westButton_Click(object sender, EventArgs e)
         {
-            movePlayer('W');
+            reqMovePlayer('W');
         }
 
         private void southButton_Click(object sender, EventArgs e)
         {
-            movePlayer('S');
+            reqMovePlayer('S');
         }
+        //
+        //
+        //
+        ///////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

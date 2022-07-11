@@ -49,6 +49,21 @@ namespace Ex5_MazeGame
         {
             return currentRoom;
         }
+        ///////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
+        //
+        //
+        //
+        public void setCurrentRoom(Room r)
+        {
+            this.currentRoom = r;
+
+        }
+        //
+        //
+        //
+        ///////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
 
         public List<Item> getBag()
         {
@@ -92,27 +107,34 @@ namespace Ex5_MazeGame
         public String move(char direction)
         {
 
-         if(this.currentRoom.getConnectedRoom(direction)!= null)
+            if (this.currentRoom.getConnectedRoom(direction) != null)
             {
                 if (this.currentRoom.isOpen(direction))
                 {
-                    if (getCurrentRoom() == maze.getChallengeRoom() && direction == 'S')
+                    Console.WriteLine(getCurrentRoom().getConnectedRoom(direction).getName());
+                    Console.WriteLine(maze.getChallengeRoom().getName());
+                    Console.WriteLine("///////////////////");
+                    if (getCurrentRoom().getConnectedRoom(direction).getName() == maze.getChallengeRoom().getName())
                     {
-
+                        return "challenge";
                     }
                     else
                     {
-                    this.currentRoom = this.currentRoom.getConnectedRoom(direction);
-                    return "open";
+                        return "open";
                     }
                 }
 
                 return "closed";
-                
+
             }
 
-                return "wall";
-            
+            return "wall";
+
         }
+        //
+        //
+        //
+        ///////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
     }
 }
