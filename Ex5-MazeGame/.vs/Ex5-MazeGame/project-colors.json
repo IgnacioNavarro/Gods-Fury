@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "96570bc2-0587-4903-87a7-3cba28d9ccb7": {
+      "ProjectGuid": "96570bc2-0587-4903-87a7-3cba28d9ccb7",
+      "DisplayName": "Ex5-MazeGame",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
