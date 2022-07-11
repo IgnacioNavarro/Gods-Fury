@@ -49,8 +49,8 @@ namespace Ex5_MazeGame
             this.useButton = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.hpLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // northButton
@@ -259,9 +259,9 @@ namespace Ex5_MazeGame
             // 
             this.hpLabel.AutoSize = true;
             this.hpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hpLabel.Location = new System.Drawing.Point(545, 436);
+            this.hpLabel.Location = new System.Drawing.Point(555, 29);
             this.hpLabel.Name = "hpLabel";
-            this.hpLabel.Size = new System.Drawing.Size(62, 29);
+            this.hpLabel.Size = new System.Drawing.Size(50, 25);
             this.hpLabel.TabIndex = 17;
             this.hpLabel.Text = "HP: ";
             this.hpLabel.Click += new System.EventHandler(this.label7_Click);
@@ -273,7 +273,6 @@ namespace Ex5_MazeGame
             this.ClientSize = new System.Drawing.Size(957, 409);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
-            this.ClientSize = new System.Drawing.Size(800, 483);
             this.Controls.Add(this.hpLabel);
             this.Controls.Add(this.useButton);
             this.Controls.Add(this.pickUpButton);

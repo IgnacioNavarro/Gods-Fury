@@ -123,7 +123,7 @@ namespace Ex5_MazeGame
                 MessageBox.Show("The door is closed");
             }
 
-            maze.updateMap(map, pen);
+            //maze.updateMap(map, pen);
 
         }
 
