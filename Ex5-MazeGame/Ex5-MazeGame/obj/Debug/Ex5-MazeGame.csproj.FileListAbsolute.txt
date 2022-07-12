@@ -20,3 +20,26 @@ C:\Users\aleja\Desktop\Alex\Uni\Erasmus\Kurs\OOP (C#)\Ex5-MazeGame\Ex5-MazeGame\
 C:\Users\aleja\Desktop\Alex\Uni\Erasmus\Kurs\OOP (C#)\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.csproj.CoreCompileInputs.cache
 C:\Users\aleja\Desktop\Alex\Uni\Erasmus\Kurs\OOP (C#)\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.exe
 C:\Users\aleja\Desktop\Alex\Uni\Erasmus\Kurs\OOP (C#)\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.pdb
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\bin\Debug\Ex5-MazeGame.exe.config
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\bin\Debug\Ex5-MazeGame.exe
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\bin\Debug\Ex5-MazeGame.pdb
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.csproj.AssemblyReference.cache
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5_MazeGame.MainWindow.resources
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5_MazeGame.Properties.Resources.resources
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.csproj.GenerateResource.cache
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.csproj.CoreCompileInputs.cache
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.exe
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.pdb
+C:\Users\aleja\Source\Repos\Gods-Fury\Ex5-MazeGame\Ex5-MazeGame\bin\Debug\Ex5-MazeGame.exe.config
+C:\Users\aleja\Source\Repos\Gods-Fury\Ex5-MazeGame\Ex5-MazeGame\bin\Debug\Ex5-MazeGame.exe
+C:\Users\aleja\Source\Repos\Gods-Fury\Ex5-MazeGame\Ex5-MazeGame\bin\Debug\Ex5-MazeGame.pdb
+C:\Users\aleja\Source\Repos\Gods-Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.csproj.AssemblyReference.cache
+C:\Users\aleja\Source\Repos\Gods-Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\aleja\Source\Repos\Gods-Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5_MazeGame.MainWindow.resources
+C:\Users\aleja\Source\Repos\Gods-Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5_MazeGame.Properties.Resources.resources
+C:\Users\aleja\Source\Repos\Gods-Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.csproj.GenerateResource.cache
+C:\Users\aleja\Source\Repos\Gods-Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.csproj.CoreCompileInputs.cache
+C:\Users\aleja\Source\Repos\Gods-Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.exe
+C:\Users\aleja\Source\Repos\Gods-Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5-MazeGame.pdb
+C:\Users\inava\Desktop\Repositorios\OOP\Gods Fury\Gods Fury\Ex5-MazeGame\Ex5-MazeGame\obj\Debug\Ex5_MazeGame.Battle.resources
