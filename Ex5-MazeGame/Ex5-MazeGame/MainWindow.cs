@@ -97,8 +97,9 @@ namespace Ex5_MazeGame
                 }
                 else if (player.getCurrentRoom() == maze.getLosingRoom())
                 {
-                    MessageBox.Show("The torture room is full of unbelievable hideous images, decomposing bodies and bloodthirsty torture weapons. You can't help throwing up. You loose hp");
-
+                    MessageBox.Show("The torture room is full of unbelievable hideous images, decomposing bodies and bloodthirsty torture weapons. You can't help throwing up. You loose 5 hp");
+                    this.player.getDamage(5);
+                    updatePlayer();
                 }
                 else
                 {
@@ -116,6 +117,11 @@ namespace Ex5_MazeGame
                 {
                     player.setCurrentRoom(player.getCurrentRoom().getConnectedRoom(direction));
                     this.updateRoom();
+                    Battle battle = new Battle(zeus, player, this);
+                    this.Visible = false;
+                    battle.Show();
+
+
                 }
             }
             else if (move == "closed")

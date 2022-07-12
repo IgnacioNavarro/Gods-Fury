@@ -40,9 +40,28 @@ namespace Ex5_MazeGame
         }
 
 
-        public void attack(int damage)
+        public void getHeal(int heal)
         {
+            if ((this.HP + heal) >= this.maxHP)
+            {
+                this.HP = this.maxHP;
+            }
+            else
+            {
+                this.HP += heal;
+            }
+        }
 
+        public void getDamage(int damage)
+        {
+            if (damage >= this.HP)
+            {
+                this.HP = 0;
+            }
+            else
+            {
+                this.HP -= damage;
+            }
         }
     }
 }
