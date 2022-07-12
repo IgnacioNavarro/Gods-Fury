@@ -14,7 +14,7 @@ namespace Ex5_MazeGame
         private Room startRoom;
         private Room winningRoom;
         private Room losingRoom;
-        private Room throneRoom = new Room("Zeus' Trhone Room", "#FFF", false, false, false, false, false, false, true);        //all doors closed but south
+        private Room throneRoom = new Room("Zeus' Throne Room", "#FFF", false, false, false, false, false, false, true);        //all doors closed but south
         private Room armory = new Room("Armory", "#FFF", false, false, false, false, false, false, true);                       //all doors closed but south
         private Room eternalGarden = new Room("Eternal Garden", "#FFF", false, false, false, true);
         private Room hermesDorm = new Room("Hermes' Dormitory", "#FFF", false, false, false, true);
