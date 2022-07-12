@@ -102,7 +102,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Ex5_MazeGame.Properties.Resources._89_895836_zeus_zeus_png_transparent;
+            this.pictureBox2.Image = global::Ex5_MazeGame.Properties.Resources._02e80d6aadf2cf4b080230817d10629f;
             this.pictureBox2.Location = new System.Drawing.Point(586, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(297, 348);

@@ -39,6 +39,7 @@ namespace Ex5_MazeGame
 
         public MainWindow(Maze maze, Player player)
         {
+            MessageBox.Show("You escaped... for now");
             InitializeComponent();
             map = pictureBox1.CreateGraphics();
             this.maze = maze;
@@ -47,8 +48,15 @@ namespace Ex5_MazeGame
             player.getMaze().nextLevel();
             player.setCurrentRoom(maze.getStartRoom());
             this.pen = new SolidBrush(Color.Black);
-            this.enemy = new Enemy("Atenea", 45, maze.getChallengeRoom());
-            this.updateRoom();
+            if(maze.getLevel()== 2)
+            {
+                this.enemy = new Enemy("Atenea", 45, maze.getChallengeRoom());
+            }
+            if(maze.getLevel()== 3)
+            {
+                this.enemy = new Enemy("Poseidon", 60, maze.getChallengeRoom());
+            }
+
             updatePlayer();
             updateRoom();
 
@@ -124,17 +132,17 @@ namespace Ex5_MazeGame
                     if (maze.getLevel() < 2)
                     {
 
-                        maze.nextLevel();
-                        player.getMaze().nextLevel();
-                        player.setCurrentRoom(maze.getStartRoom());
+                        //maze.nextLevel();
+                        //player.getMaze().nextLevel();
+                        //player.setCurrentRoom(maze.getStartRoom());
                         // TODO : close window and open again
 
-                        this.Visible = false;
+                        //this.Visible = false;
 
-                        MessageBox.Show("You escaped... for now");
+                        //MessageBox.Show("You escaped... for now");
 
-                        this.Visible = true;
-                        this.updateRoom();
+                        //this.Visible = true;
+                        //this.updateRoom();
 
                     } else
                     {

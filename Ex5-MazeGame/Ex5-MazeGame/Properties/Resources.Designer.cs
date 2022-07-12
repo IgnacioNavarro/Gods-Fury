@@ -63,6 +63,16 @@ namespace Ex5_MazeGame.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _02e80d6aadf2cf4b080230817d10629f {
+            get {
+                object obj = ResourceManager.GetObject("02e80d6aadf2cf4b080230817d10629f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _89_895836_zeus_zeus_png_transparent {
             get {
                 object obj = ResourceManager.GetObject("89-895836_zeus-zeus-png-transparent", resourceCulture);

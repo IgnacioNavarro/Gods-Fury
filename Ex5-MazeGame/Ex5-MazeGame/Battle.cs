@@ -28,6 +28,19 @@ namespace Ex5_MazeGame
             this.player = player;
             this.maze = maze;
             //this.mainWindow = mainWindow;
+            if(god.getName() == "Zeus")
+            {
+                //poner foto
+                pictureBox2.Image = Properties.Resources._89_895836_zeus_zeus_png_transparent;
+            }else if(god.getName() == "Atenea")
+            {
+                //pooner foto
+                pictureBox2.Image = Properties.Resources._02e80d6aadf2cf4b080230817d10629f;
+            }
+            else if(god.getName()== "Poseidon")
+            {
+                //poner foto
+            }
 
             updatePlayer();
             updateEnemy();
@@ -70,7 +83,7 @@ namespace Ex5_MazeGame
 
             if (enemyHP <= 0)
             {
-                MessageBox.Show("You killed Zeus!!");
+                MessageBox.Show("You killed "+enemy.getName() + "!!");
                 this.mainWindow = new MainWindow(maze, player);
                 this.mainWindow.Visible = true;
                 Close();

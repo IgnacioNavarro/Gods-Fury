@@ -105,5 +105,8 @@
   <ItemGroup>
     <None Include="Resources\89-895836_zeus-zeus-png-transparent.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02e80d6aadf2cf4b080230817d10629f.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
