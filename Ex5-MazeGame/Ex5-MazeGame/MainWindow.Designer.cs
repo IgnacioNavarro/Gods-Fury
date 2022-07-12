@@ -294,7 +294,6 @@ namespace Ex5_MazeGame
             this.MinimumSize = new System.Drawing.Size(1291, 541);
             this.Name = "MainWindow";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.MainWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

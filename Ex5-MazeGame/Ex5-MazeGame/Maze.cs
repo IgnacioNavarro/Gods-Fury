@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Ex5_MazeGame
 {
-    internal class Maze
+    public class Maze
     {
 
-        private int level=1;
+        private int level;
         ///////////////////////////////////////////             1st maze            //////////////////////////////////////////////////
         private Room startRoom;
         private Room winningRoom;
@@ -57,10 +57,10 @@ namespace Ex5_MazeGame
 
         ///////////////////////////////////////////             //////////            //////////////////////////////////////////////////
 
-        public Maze()
+        public Maze(int startLevel)
         {
             //creating the rooms premade
-
+            level = startLevel;
 
             //creating objects
             Item key = new Item("Flying Key", true,1, false);
@@ -151,9 +151,9 @@ namespace Ex5_MazeGame
             map.Dispose();
         }
 
-        public void setLevel(int i)
+        public void nextLevel()
         {
-            level = i;
+            level ++;
         }
         public int getLevel()
         {

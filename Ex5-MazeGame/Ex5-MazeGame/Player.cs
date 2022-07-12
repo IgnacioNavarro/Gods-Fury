@@ -20,7 +20,7 @@ namespace Ex5_MazeGame
         {
             this.currentRoom = currentRoom;
             this.bag = new List<Item>();
-            this.maze = new Maze();
+            this.maze = new Maze(1);
             this.maxHP = 30;
             this.HP = this.maxHP;
             /*
@@ -43,6 +43,11 @@ namespace Ex5_MazeGame
         public int getMaxHP()
         {
             return this.maxHP;
+        }
+
+        public Maze getMaze()
+        {
+            return this.maze;
         }
 
         public int getHP()

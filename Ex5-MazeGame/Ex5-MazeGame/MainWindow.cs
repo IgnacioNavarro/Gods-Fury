@@ -24,7 +24,7 @@ namespace Ex5_MazeGame
         {
             InitializeComponent();
             map =pictureBox1.CreateGraphics();
-            this.maze = new Maze();
+            this.maze = new Maze(1);
             pen=new SolidBrush(Color.Black);
             this.player = new Player(maze.getStartRoom());
             this.zeus = new Enemy("Zeus", 30, maze.getChallengeRoom());
@@ -104,7 +104,8 @@ namespace Ex5_MazeGame
                     if (maze.getLevel() < 2)
                     {
 
-                        maze.setLevel(maze.getLevel() + 1);
+                        maze.nextLevel();
+                        player.getMaze().nextLevel();
                         player.setCurrentRoom(maze.getStartRoom());
                         // TODO : close window and open again
 
