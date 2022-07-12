@@ -81,8 +81,14 @@ namespace Ex5_MazeGame
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //user attack
             this.enemy.getDamage(5);
+
             updateEnemy();
+
+            //zeus attack
+            godAttack();
+
             updatePlayer();
         }
         //use item
@@ -97,15 +103,19 @@ namespace Ex5_MazeGame
             {
                 if (it.getOnEnemy())
                 {
-                    it.Use(null, enemy);
+                    it.Use(null, this.enemy);
+                    MessageBox.Show("Number of uses of the item left: " + it.getNumberOfUses());
+                    updateEnemy();
                 }
                 else
                 {
-                    it.Use(player, null);
+                    it.Use(this.player, null);
+                    MessageBox.Show("Number of uses of the item left: " + it.getNumberOfUses());
+                    updatePlayer();
                 }
+                godAttack();
                 updatePlayer();
                 updateEnemy();
-                MessageBox.Show("Number of uses of the item left: " + it.getNumberOfUses());
 
 
             }
@@ -119,6 +129,46 @@ namespace Ex5_MazeGame
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void godAttack()
+        {
+            if(enemy.getName() == "Zeus")
+            {
+                if(enemy.getHP()>= 15)
+                {
+                    System.Threading.Thread.Sleep(500);
+                    player.getDamage(3);
+                    MessageBox.Show("Zeus is attacking! -3HP");
+                    updatePlayer();
+
+                }
+                else if (enemy.getHP() < 15)
+                {
+                    if(enemy.getHP() <= 0)
+                    {
+                        updatePlayer();
+                    }
+                    else
+                    {
+                        System.Threading.Thread.Sleep(500);
+                        MessageBox.Show("Zeus is furious! You receive 5 points of damage");
+                        player.getDamage(5);
+                        updatePlayer();
+                    }
+
+                }
+
+
+            }else if(enemy.getName() == "Atenea")
+            {
+
+            }
+            else if(enemy.getName() == "Poseidon")
+            {
+
+            }
         }
     }
 }

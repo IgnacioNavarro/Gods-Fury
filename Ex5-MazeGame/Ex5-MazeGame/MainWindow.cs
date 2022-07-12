@@ -30,7 +30,11 @@ namespace Ex5_MazeGame
             this.zeus = new Enemy("Zeus", 30, maze.getChallengeRoom());
             updatePlayer();
             updateRoom();
-            MessageBox.Show("AQUI ESCRIBIMOS EL LORE EN UNO O UNOS CUANTOS MENSAJES");
+            MessageBox.Show("You are a human that climbed the whole Olympus and stole the power of the eleventh god.");
+            MessageBox.Show("You made it and now you have the Anemo power (Wind), but...");
+            MessageBox.Show("the rest of the gods now want to kill you and recover the power.");
+            MessageBox.Show("Your mission is to successfully escape without dying, to do that you will have to fight them while going down the Olympus.");
+            MessageBox.Show("Good luck, Player...");
         }
 
 
