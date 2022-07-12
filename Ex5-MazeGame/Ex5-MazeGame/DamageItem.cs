@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace Ex5_MazeGame
 {
-    class Potion : Item
+    class DamageItem : Item
     {
-        private int healPoints;
-        public Potion(string name, bool pickable, int numerOfUses, int healpoints, bool onEnemy) : base(name, pickable, numerOfUses, onEnemy)
+        private int damagePoints;
+        public DamageItem(string name, bool pickable, int numerOfUses, int damagePoints, bool onEnemy) 
+            : base(name, pickable, numerOfUses, onEnemy)
         {
             this.name = name;
             this.pickable = pickable;
             this.visible = true;
             this.numberOfUses = numerOfUses;
-            this.healPoints = healpoints;
-            this.onEnemy = onEnemy;
+            this.damagePoints = damagePoints;
+            this.onEnemy = true;
 
         }
         public override void Use(Player user, Enemy enemy)
         {
-            user.getHeal(healPoints);
+            enemy.getDamage(damagePoints);
 
             if (numberOfUses > 0)
             {

@@ -42,10 +42,10 @@ namespace Ex5_MazeGame
             level = 1;
 
             //creating objects
-            Item key = new Item("Flying Key", true,1);
+            Item key = new Item("Flying Key", true,1, false);
 
-            Item statue = new Item("Statue", false, 1);
-            Item bomb = new Item("Bomb", true,1);
+            Item statue = new Item("Statue", false, 1, false);
+            Item bomb = new Item("Bomb", true,1, false);
 
 
 

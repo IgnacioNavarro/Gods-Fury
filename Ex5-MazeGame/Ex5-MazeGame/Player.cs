@@ -33,8 +33,10 @@ namespace Ex5_MazeGame
             addToBag(rock);
             addToBag(bigRock);
             */
-            Potion healPotion = new Potion("Heal Potion", true, 1);
+            Potion healPotion = new Potion("Heal Potion", true, 2, 10, false);
+            DamageItem sword = new DamageItem("Long Sword", true, 5, 8, true);
             addToBag(healPotion);
+            addToBag(sword);
 
         }
 

@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="Maze.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="DamageItem.cs" />
     <Compile Include="Potion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

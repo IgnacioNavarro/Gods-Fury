@@ -13,13 +13,15 @@ namespace Ex5_MazeGame
         protected bool pickable;
         protected bool visible;
         protected int numberOfUses;
+        protected bool onEnemy;
 
-        public Item (string name, bool pickable, int numerOfUses)
+        public Item (string name, bool pickable, int numerOfUses, bool onEnemy)
         {
             this.name = name;
             this.pickable = pickable;
             this.visible = true;
             this.numberOfUses = numerOfUses;
+            this.onEnemy = onEnemy;
         }
 
         public Item(string name, bool pickable, bool visible)
@@ -37,6 +39,11 @@ namespace Ex5_MazeGame
         public override string ToString()
         {
             return this.name;
+        }
+
+        public bool getOnEnemy()
+        {
+            return this.onEnemy;
         }
 
         public int getNumberOfUses()
@@ -61,12 +68,14 @@ namespace Ex5_MazeGame
             this.visible = true;
         }
 
-        public void Use(Player user)
+        public virtual void Use(Player user, Enemy enemy)
         {
+
             if(numberOfUses> 0)
             {
                 numberOfUses--;
             }
         }
+
     }
 }

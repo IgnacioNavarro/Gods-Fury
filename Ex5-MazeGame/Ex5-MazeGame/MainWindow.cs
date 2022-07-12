@@ -34,11 +34,6 @@ namespace Ex5_MazeGame
         }
 
 
-        private void updateEnemy()
-        {
-
-        }
-
         private void updatePlayer()
         {
             //Player items
@@ -239,12 +234,20 @@ namespace Ex5_MazeGame
                 if (!it.isPickable()) MessageBox.Show("Too heavy!");
                 else
                 {
-                    //remove from room content and the listbox
-                    this.player.getCurrentRoom().deleteContent(it);
-                    updateRoom();
-                    //add to player bag and listbox
-                    this.player.addToBag(it);
-                    updatePlayer();
+                    if(player.getBag().Count() >= 11)
+                    {
+                        MessageBox.Show("Limit reached.");
+                    }
+                    else
+                    {
+                        //remove from room content and the listbox
+                        this.player.getCurrentRoom().deleteContent(it);
+                        updateRoom();
+                        //add to player bag and listbox
+                        this.player.addToBag(it);
+                        updatePlayer();
+                    }
+
                 }
                 
             }
@@ -300,10 +303,18 @@ namespace Ex5_MazeGame
             }
             else
             {
-                it.Use(player);
+                if (it.getOnEnemy())
+                {
+                    MessageBox.Show("Remember prof. Rowan's words: there's a time and place for everything! But not now.");
+                }
+                else
+                {
+                    it.Use(player, null);
+                    MessageBox.Show("Number of uses of the item left: " + it.getNumberOfUses());
+                }
                 updateRoom();
                 updatePlayer();
-                MessageBox.Show("Number of uses of the item: " + it.getNumberOfUses());
+
                 
 
             }

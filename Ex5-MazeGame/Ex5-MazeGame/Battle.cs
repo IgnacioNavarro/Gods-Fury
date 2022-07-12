@@ -74,6 +74,7 @@ namespace Ex5_MazeGame
                 if (enemy.getHP() <= 0)
                 {
                     //player.setCurrentRoom(player.getCurrentRoom().getConnectedRoom('S'));
+
                 }
             }
         }
@@ -84,7 +85,7 @@ namespace Ex5_MazeGame
             updateEnemy();
             updatePlayer();
         }
-
+        //use item
         private void button1_Click_1(object sender, EventArgs e)
         {
             Item it = (Item)this.playerItems.SelectedItem;
@@ -94,20 +95,18 @@ namespace Ex5_MazeGame
             }
             else
             {
-                if (!it.isPickable())
+                if (it.getOnEnemy())
                 {
-                    MessageBox.Show("Too heavy!");
+                    it.Use(null, enemy);
                 }
                 else
                 {
-                    //remove from room content and the listbox
-                    this.player.deleteFromBag(it);
-                    updatePlayer();
-                    //add to room items and listbox
-                    //player.addToBag(it);
-                    //this.player.getCurrentRoom().addContent(it);
-                    //updateRoom();
+                    it.Use(player, null);
                 }
+                updatePlayer();
+                updateEnemy();
+                MessageBox.Show("Number of uses of the item left: " + it.getNumberOfUses());
+
 
             }
         }
