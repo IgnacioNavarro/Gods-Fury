@@ -9,15 +9,17 @@ namespace Ex5_MazeGame
     public class Item
     {
 
-        private string name;
-        private bool pickable;
-        private bool visible;
+        protected string name;
+        protected bool pickable;
+        protected bool visible;
+        protected int numberOfUses;
 
-        public Item (string name, bool pickable)
+        public Item (string name, bool pickable, int numerOfUses)
         {
             this.name = name;
             this.pickable = pickable;
-            visible = true;
+            this.visible = true;
+            this.numberOfUses = numerOfUses;
         }
 
         public Item(string name, bool pickable, bool visible)
@@ -37,6 +39,11 @@ namespace Ex5_MazeGame
             return this.name;
         }
 
+        public int getNumberOfUses()
+        {
+            return numberOfUses;
+        }
+
         public bool isPickable()
         {
             if (this.pickable) return true;
@@ -54,9 +61,12 @@ namespace Ex5_MazeGame
             this.visible = true;
         }
 
-        public void use(Player user)
+        public void Use(Player user)
         {
-
+            if(numberOfUses> 0)
+            {
+                numberOfUses--;
+            }
         }
     }
 }

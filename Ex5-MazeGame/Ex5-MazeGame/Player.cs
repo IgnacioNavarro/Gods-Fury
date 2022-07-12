@@ -33,6 +33,9 @@ namespace Ex5_MazeGame
             addToBag(rock);
             addToBag(bigRock);
             */
+            Potion healPotion = new Potion("Heal Potion", true, 1);
+            addToBag(healPotion);
+
         }
 
         public int getMaxHP()

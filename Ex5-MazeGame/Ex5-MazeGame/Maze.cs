@@ -42,17 +42,16 @@ namespace Ex5_MazeGame
             level = 1;
 
             //creating objects
-            Item key = new Item("Flying Key", true);
-            Item coin = new Item("Coin", true);
-            Item statue = new Item("Statue", false);
-            Item bomb = new Item("Bomb", true);
-            Item lamp = new Item("Lamp", true);
-            Item camera = new Item("Camera", true);
-            Item pen = new Item("Pen", true);
-            Item book = new Item("Book", true);
+            Item key = new Item("Flying Key", true,1);
+
+            Item statue = new Item("Statue", false, 1);
+            Item bomb = new Item("Bomb", true,1);
+
 
 
             //placing the items
+
+            throneRoom.addContent(bomb);
 /*
             bathroom.addContent(key);
             bathroom.addContent(coin);

@@ -23,13 +23,14 @@ namespace Ex5_MazeGame
         public MainWindow()
         {
             InitializeComponent();
-            map=pictureBox1.CreateGraphics();
+            map =pictureBox1.CreateGraphics();
             this.maze = new Maze();
             pen=new SolidBrush(Color.Black);
             this.player = new Player(maze.getStartRoom());
             this.zeus = new Enemy("Zeus", 30, maze.getChallengeRoom());
             updatePlayer();
             updateRoom();
+            MessageBox.Show("AQUI ESCRIBIMOS EL LORE EN UNO O UNOS CUANTOS MENSAJES");
         }
 
 
@@ -44,7 +45,10 @@ namespace Ex5_MazeGame
             this.playerItems.Items.Clear();
             foreach (Item it in this.player.getBag())
             {
-                this.playerItems.Items.Add(it);
+                if(it.getNumberOfUses() > 0)
+                {
+                    this.playerItems.Items.Add(it);
+                }
             }
 
             int maxHP = this.player.getMaxHP();
@@ -271,7 +275,7 @@ namespace Ex5_MazeGame
                     this.player.deleteFromBag(it);
                     updatePlayer();
                     //add to room items and listbox
-                    player.addToBag(it);
+                    //player.addToBag(it);
                     this.player.getCurrentRoom().addContent(it);
                     updateRoom();
                 }
@@ -285,6 +289,24 @@ namespace Ex5_MazeGame
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void useButton_Click(object sender, EventArgs e)
+        {
+            Item it = (Item)this.playerItems.SelectedItem;
+            if (it == null)
+            {
+                MessageBox.Show("Select an item!");
+            }
+            else
+            {
+                it.Use(player);
+                updateRoom();
+                updatePlayer();
+                MessageBox.Show("Number of uses of the item: " + it.getNumberOfUses());
+                
+
+            }
         }
     }
 }
