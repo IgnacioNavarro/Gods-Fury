@@ -62,7 +62,7 @@ namespace Ex5_MazeGame
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.player.getDamage(50);
+            this.enemy.getDamage(50);
             updateEnemy();
             updatePlayer();
         }
