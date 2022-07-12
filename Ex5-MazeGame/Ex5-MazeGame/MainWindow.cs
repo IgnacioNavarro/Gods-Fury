@@ -101,8 +101,29 @@ namespace Ex5_MazeGame
                 this.updateRoom();
                 if (player.getCurrentRoom() == maze.getWinningRoom())
                 {
-                    MessageBox.Show("You escaped with the power of the gods!");
-                    Close();
+                    if (maze.getLevel() < 2)
+                    {
+
+                        maze.setLevel(maze.getLevel() + 1);
+                        player.setCurrentRoom(maze.getStartRoom());
+                        // TODO : close window and open again
+
+                        this.Visible = false;
+
+                        MessageBox.Show("You escaped... for now");
+
+                        this.Visible = true;
+                        this.updateRoom();
+
+                    } else
+                    {
+                        MessageBox.Show("You win!");
+                        this.Close();
+                    }
+
+
+
+
                 }
                 else if (player.getCurrentRoom() == maze.getLosingRoom())
                 {
@@ -121,7 +142,7 @@ namespace Ex5_MazeGame
             }
             else if (move == "challenge")
             {
-                DialogResult d = MessageBox.Show("You will have to face Zeus to scape. Are you ready?", "", MessageBoxButtons.YesNo);
+                DialogResult d = MessageBox.Show("You will have to face a god to scape. Are you ready?", "", MessageBoxButtons.YesNo);
                 if (d == DialogResult.Yes)
                 {
                     player.getCurrentRoom().drawPast(map);
