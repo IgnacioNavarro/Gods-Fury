@@ -17,6 +17,7 @@ namespace Ex5_MazeGame
         private Player player;
         private Graphics map;
         private SolidBrush pen;
+        bool mazeinit = false;
 
         public MainWindow()
         {
@@ -64,12 +65,21 @@ namespace Ex5_MazeGame
 
         private void reqMovePlayer(char direction)
         {
+            if (!mazeinit)
+            {
+                maze.getStartRoom().draw(map);
+                mazeinit = true;
+            }
             String move = player.move(direction);
 
             //MessageBox.Show(move);
 
+
             if (move == "open")
             {
+                draw(direction);
+                player.getCurrentRoom().drawPast(map);
+                /**/
                 player.setCurrentRoom(player.getCurrentRoom().getConnectedRoom(direction));
                 this.updateRoom();
                 if (player.getCurrentRoom() == maze.getWinningRoom())
@@ -96,6 +106,8 @@ namespace Ex5_MazeGame
                 DialogResult d = MessageBox.Show("You will have to face Zeus to scape. Are you ready?", "", MessageBoxButtons.YesNo);
                 if (d == DialogResult.Yes)
                 {
+                    player.getCurrentRoom().drawPast(map);
+                    draw(direction);
                     player.setCurrentRoom(player.getCurrentRoom().getConnectedRoom(direction));
                     this.updateRoom();
                 }
@@ -105,8 +117,28 @@ namespace Ex5_MazeGame
                 MessageBox.Show("The door is closed");
             }
 
-            maze.updateMap(map, pen);
 
+            player.getCurrentRoom().draw(map);
+
+        }
+
+        public void draw(char direction)
+        {
+            switch (direction)
+            {
+                case 'N':
+                    player.getCurrentRoom().getConnectedRoom(direction).setPos(player.getCurrentRoom().getPos()[0], player.getCurrentRoom().getPos()[1] - 30);
+                    break;
+                case 'S':
+                    player.getCurrentRoom().getConnectedRoom(direction).setPos(player.getCurrentRoom().getPos()[0], player.getCurrentRoom().getPos()[1] + 30);
+                    break;
+                case 'E':
+                    player.getCurrentRoom().getConnectedRoom(direction).setPos(player.getCurrentRoom().getPos()[0] + 40, player.getCurrentRoom().getPos()[1]);
+                    break;
+                case 'W':
+                    player.getCurrentRoom().getConnectedRoom(direction).setPos(player.getCurrentRoom().getPos()[0] - 40, player.getCurrentRoom().getPos()[1]);
+                    break;
+            }
         }
 
         //

@@ -21,7 +21,7 @@ namespace Ex5_MazeGame
         private bool enemies;
         private bool chest;
         private List<Item> content;
-        private Tuple mapPos;
+        private List<int> pos;
 
 
         public Room(string name, string paint,bool lights, bool enemies, bool chest, bool isOpened )
@@ -36,6 +36,7 @@ namespace Ex5_MazeGame
             this.SisOpened = isOpened;
             this.paint = paint ;
             this.content = new List<Item>();
+            pos = new List<int>();
         }
         public Room(string name, string paint, bool lights, bool enemies, bool chest, bool NisOpened, bool EisOpened, bool WisOpened, bool SisOpened)
         {
@@ -49,6 +50,18 @@ namespace Ex5_MazeGame
             this.SisOpened = SisOpened;
             this.paint = paint;
             this.content = new List<Item>();
+            pos= new List<int>();
+        }
+
+        public void setPos(int x, int y)
+        {
+            pos.Add(x);
+            pos.Add(y);
+        }
+
+        public List<int> getPos()
+        {
+            return pos;
         }
 
         public string getName()
@@ -156,6 +169,42 @@ namespace Ex5_MazeGame
             if (chest) return true;
             else return false;
         }
+
+        public void draw(System.Drawing.Graphics map)
+        {
+            System.Drawing.SolidBrush pen = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
+            System.Drawing.SolidBrush pastPen = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
+
+            map.FillRectangle(pen, pos[0], pos[1], 30, 20);
+
+
+            if(this.southRoom != null)
+            {
+                map.FillRectangle(pastPen, pos[0] + 13, pos[1] + 20, 6, 10);
+            }
+            if (this.northRoom != null)
+            {
+                map.FillRectangle(pastPen, pos[0] + 13, pos[1] - 10, 6, 10);
+            }
+            if (this.eastRoom != null)
+            {
+                map.FillRectangle(pastPen, pos[0] + 30, pos[1] + 8, 10, 4);
+            }
+            if (this.westRoom != null)
+            {
+                map.FillRectangle(pastPen, pos[0] - 10, pos[1] + 8, 10, 4);
+            }
+        }
+        public void drawPast(System.Drawing.Graphics map)
+        {
+            System.Drawing.SolidBrush pen = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
+
+            map.FillRectangle(pen, pos[0], pos[1], 30, 20);
+
+
+
+        }
+
 
     }
 }
