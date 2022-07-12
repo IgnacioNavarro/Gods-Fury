@@ -17,7 +17,7 @@ namespace Ex5_MazeGame
         private Player player;
         private Graphics map;
         private SolidBrush pen;
-        private Enemy zeus;
+        private Enemy enemy;
         bool mazeinit = false;
 
         public MainWindow()
@@ -25,9 +25,9 @@ namespace Ex5_MazeGame
             InitializeComponent();
             map =pictureBox1.CreateGraphics();
             this.maze = new Maze(1);
-            pen=new SolidBrush(Color.Black);
+            this.pen=new SolidBrush(Color.Black);
             this.player = new Player(maze.getStartRoom());
-            this.zeus = new Enemy("Zeus", 30, maze.getChallengeRoom());
+            this.enemy = new Enemy("Zeus", 30, maze.getChallengeRoom());
             updatePlayer();
             updateRoom();
             MessageBox.Show("You are a human that climbed the whole Olympus and stole the power of the eleventh god.");
@@ -37,6 +37,22 @@ namespace Ex5_MazeGame
             MessageBox.Show("Good luck, Player...");
         }
 
+        public MainWindow(Maze maze, Player player)
+        {
+            InitializeComponent();
+            map = pictureBox1.CreateGraphics();
+            this.maze = maze;
+            this.player = player;
+            maze.nextLevel();
+            player.getMaze().nextLevel();
+            player.setCurrentRoom(maze.getStartRoom());
+            this.pen = new SolidBrush(Color.Black);
+            this.enemy = new Enemy("Atenea", 45, maze.getChallengeRoom());
+            this.updateRoom();
+            updatePlayer();
+            updateRoom();
+
+        }
 
         private void updatePlayer()
         {
@@ -154,7 +170,7 @@ namespace Ex5_MazeGame
                     draw(direction);
                     player.setCurrentRoom(player.getCurrentRoom().getConnectedRoom(direction));
                     this.updateRoom();
-                    Battle battle = new Battle(zeus, player, this);
+                    Battle battle = new Battle(enemy, player, maze);
                     this.Visible = false;
                     battle.Show();
 

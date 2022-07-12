@@ -15,17 +15,19 @@ namespace Ex5_MazeGame
         private Enemy enemy;
         private Player player;
         private MainWindow mainWindow;
+        private Maze maze;
         public Battle()
         {
             InitializeComponent();
         }
 
-        public Battle(Enemy god, Player player, MainWindow mainWindow)
+        public Battle(Enemy god, Player player, Maze maze)
         {
             InitializeComponent();
             this.enemy = god;
             this.player = player;
-            this.mainWindow = mainWindow;
+            this.maze = maze;
+            //this.mainWindow = mainWindow;
 
             updatePlayer();
             updateEnemy();
@@ -69,6 +71,7 @@ namespace Ex5_MazeGame
             if (enemyHP <= 0)
             {
                 MessageBox.Show("You killed Zeus!!");
+                this.mainWindow = new MainWindow(maze, player);
                 this.mainWindow.Visible = true;
                 Close();
                 if (enemy.getHP() <= 0)

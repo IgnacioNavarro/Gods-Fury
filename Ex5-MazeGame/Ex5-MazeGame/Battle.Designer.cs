@@ -125,7 +125,7 @@
             // 
             this.enemyLabel.AutoSize = true;
             this.enemyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enemyLabel.Location = new System.Drawing.Point(487, 14);
+            this.enemyLabel.Location = new System.Drawing.Point(412, 14);
             this.enemyLabel.Name = "enemyLabel";
             this.enemyLabel.Size = new System.Drawing.Size(93, 39);
             this.enemyLabel.TabIndex = 18;
