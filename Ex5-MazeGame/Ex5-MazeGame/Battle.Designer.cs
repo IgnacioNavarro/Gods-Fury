@@ -34,10 +34,10 @@
             this.playerItems = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.hpLabel = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.enemyLabel = new System.Windows.Forms.Label();
             this.enemyHPLabel = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -100,27 +100,6 @@
             this.hpLabel.TabIndex = 16;
             this.hpLabel.Text = "HP: 30/30";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Ex5_MazeGame.Properties.Resources._02e80d6aadf2cf4b080230817d10629f;
-            this.pictureBox2.Location = new System.Drawing.Point(586, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(297, 348);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Ex5_MazeGame.Properties.Resources.kindpng_3476120;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(313, 358);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
             // enemyLabel
             // 
             this.enemyLabel.AutoSize = true;
@@ -141,6 +120,27 @@
             this.enemyHPLabel.Size = new System.Drawing.Size(168, 39);
             this.enemyHPLabel.TabIndex = 19;
             this.enemyHPLabel.Text = "HP: 30/30";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Ex5_MazeGame.Properties.Resources.smite_renders_hades_primary_by_kaiology_d9cor08_smite_hades_11563538199t9f82mplmi;
+            this.pictureBox2.Location = new System.Drawing.Point(611, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(272, 358);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Ex5_MazeGame.Properties.Resources.kindpng_3476120;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(313, 358);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // Battle
             // 

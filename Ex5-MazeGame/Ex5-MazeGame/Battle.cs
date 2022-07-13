@@ -37,9 +37,10 @@ namespace Ex5_MazeGame
                 //pooner foto
                 pictureBox2.Image = Properties.Resources._02e80d6aadf2cf4b080230817d10629f;
             }
-            else if(god.getName()== "Poseidon")
+            else if(god.getName()== "Hades")
             {
                 //poner foto
+                pictureBox2.Image = Properties.Resources.smite_renders_hades_primary_by_kaiology_d9cor08_smite_hades_11563538199t9f82mplmi;
             }
 
             updatePlayer();
@@ -179,11 +180,69 @@ namespace Ex5_MazeGame
 
             }else if(enemy.getName() == "Atenea")
             {
+                if (enemy.getHP() >= 30)
+                {
+                    System.Threading.Thread.Sleep(500);
+                    player.getDamage(5);
+                    MessageBox.Show("Atenea is hitting with the shield! -5HP");
+                    updatePlayer();
+
+                }else if(enemy.getHP() < 30 && enemy.getHP() >= 15)
+                {
+                    System.Threading.Thread.Sleep(500);
+                    player.getDamage(7);
+                    MessageBox.Show("Atenea is hitting with the spear! -7HP");
+                    updatePlayer();
+
+                }
+                else if(enemy.getHP() < 15)
+                {
+                    if (enemy.getHP() <= 0)
+                    {
+                        updatePlayer();
+                    }
+                    else
+                    {
+                        System.Threading.Thread.Sleep(500);
+                        player.getDamage(9);
+                        MessageBox.Show("Atenea is faster! -9HP");
+                        updatePlayer();
+                    }
+                }
 
             }
-            else if(enemy.getName() == "Poseidon")
+            else if(enemy.getName() == "Hades")
             {
+                if (enemy.getHP() >= 40)
+                {
+                    System.Threading.Thread.Sleep(500);
+                    player.getDamage(5);
+                    MessageBox.Show("Hades is using dark spells on you! -5HP");
+                    updatePlayer();
 
+                }
+                else if (enemy.getHP() < 40 && enemy.getHP() >= 15)
+                {
+                    System.Threading.Thread.Sleep(500);
+                    player.getDamage(8);
+                    MessageBox.Show("Hades is hitting with the reaper! -8HP");
+                    updatePlayer();
+
+                }
+                else if (enemy.getHP() < 15)
+                {
+                    if (enemy.getHP() <= 0)
+                    {
+                        updatePlayer();
+                    }
+                    else
+                    {
+                        System.Threading.Thread.Sleep(500);
+                        player.getDamage(10);
+                        MessageBox.Show("Hades is almost defeated, but he is using his best spell! -10HP");
+                        updatePlayer();
+                    }
+                }
             }
         }
     }

@@ -89,5 +89,16 @@ namespace Ex5_MazeGame.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap smite_renders_hades_primary_by_kaiology_d9cor08_smite_hades_11563538199t9f82mplmi {
+            get {
+                object obj = ResourceManager.GetObject("smite-renders-hades-primary-by-kaiology-d9cor08-smite-hades-11563538199t9f82mplmi" +
+                        "", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -127,4 +127,7 @@
   <data name="02e80d6aadf2cf4b080230817d10629f" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\02e80d6aadf2cf4b080230817d10629f.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="smite-renders-hades-primary-by-kaiology-d9cor08-smite-hades-11563538199t9f82mplmi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smite-renders-hades-primary-by-kaiology-d9cor08-smite-hades-11563538199t9f82mplmi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

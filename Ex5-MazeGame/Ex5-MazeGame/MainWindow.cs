@@ -54,7 +54,7 @@ namespace Ex5_MazeGame
             }
             if(maze.getLevel()== 3)
             {
-                this.enemy = new Enemy("Poseidon", 60, maze.getChallengeRoom());
+                this.enemy = new Enemy("Hades", 60, maze.getChallengeRoom());
             }
 
             updatePlayer();
@@ -71,6 +71,10 @@ namespace Ex5_MazeGame
                 if(it.getNumberOfUses() > 0)
                 {
                     this.playerItems.Items.Add(it);
+                }
+                else
+                {
+                    this.player.deleteFromBag(it);
                 }
             }
 
