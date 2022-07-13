@@ -47,6 +47,10 @@ namespace Ex5_MazeGame
             maze.nextLevel();
             player.getMaze().nextLevel();
             player.setCurrentRoom(maze.getStartRoom());
+
+            Console.WriteLine(maze.getLevel());
+            Console.WriteLine(player.getMaze().getLevel());
+            Console.WriteLine(maze.getHealingRoom().getName());
             this.pen = new SolidBrush(Color.Black);
             if(maze.getLevel()== 2)
             {

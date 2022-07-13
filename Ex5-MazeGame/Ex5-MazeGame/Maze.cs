@@ -170,6 +170,7 @@ namespace Ex5_MazeGame
 
             witheredPathB1.setConnectedRoom(null, witheredPathC1, null, witheredPathB2);  //      UP      RIGHT       LEFT        DOWN
             witheredPathC1.setConnectedRoom(null, witheredPathD1, witheredPathB1, null);
+            witheredPathD1.setPos(250, 20);
             witheredPathD1.setConnectedRoom(null, null, witheredPathC1, witheredPathD2);
             witheredPathB2.setConnectedRoom(witheredPathB1, heroGrav, null, null);
             witheredPathD2.setConnectedRoom(witheredPathD1, null, null, witheredPathD3);
@@ -179,7 +180,7 @@ namespace Ex5_MazeGame
             undCavesC5.setConnectedRoom(gate, undCavesD5, null, undCavesC6);
             undCavesD5.setConnectedRoom(null, null, undCavesC5, null);
             undCavesC6.setConnectedRoom(undCavesC5, null, undCavesB6, null);
-            undCavesB6.setConnectedRoom(null, undCavesC5, null, null);
+            undCavesB6.setConnectedRoom(null, undCavesC6, null, abyss);
             heroGrav.setConnectedRoom(null, null, witheredPathB2, null);
             tower.setConnectedRoom(null, undCavesB4, null, null);
             gate.setConnectedRoom(witheredPathC3, null, undCavesB4, undCavesC5);
@@ -212,12 +213,12 @@ namespace Ex5_MazeGame
         }
         public int getLevel()
         {
-            return level;
+            return this.level;
         }
 
         public Room getStartRoom()
         {
-            switch (level)
+            switch (getLevel())
             {
                 case 1:
                     return this.throneRoom;
@@ -235,7 +236,7 @@ namespace Ex5_MazeGame
 
         public Room getHealingRoom()
         {
-            switch (level)
+            switch (getLevel())
             {
                 case 1:
                     return this.hermesDorm;
@@ -253,7 +254,7 @@ namespace Ex5_MazeGame
 
         public Room getWinningRoom()
         {
-            switch (level)
+            switch (getLevel())
             {
                 case 1:
                     return this.exit;
