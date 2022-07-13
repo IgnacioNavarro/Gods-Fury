@@ -76,6 +76,20 @@ namespace Ex5_MazeGame
                 numberOfUses--;
             }
         }
+        /*
+        public virtual void Use(Player user)
+        {
+            if(user.getCurrentRoom().getName() == "Forgotten's Abyss")
+            {
+                user.setCurrentRoom(user.getMaze().getWinningRoom());
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Remember prof. Rowan's words: there's a time and place for everything! But not now.");
+            }
+            
+
+        }*/
 
     }
 }

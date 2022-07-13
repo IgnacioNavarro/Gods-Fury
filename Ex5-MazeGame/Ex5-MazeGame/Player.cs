@@ -35,22 +35,13 @@ namespace Ex5_MazeGame
             */
 
             //potions
-            Potion pocionAfrodita = new Potion("Aphrodite's Heal kiss", true, 1, 11, false);
             Potion healPotion = new Potion("Heal Potion", true, 2, 5, false);
-            Potion godSake = new Potion("Gods' Elixir", true, 1, 15, false);
-            Potion horn = new Potion("horn of plenty", true, 1, 20, false);
 
             //weapons
             DamageItem sword = new DamageItem("Elucidator Sword", true, 1, 8, true);
             DamageItem swrod2 = new DamageItem("Dark Repulse Sword", true, 1, 8, true);
-            DamageItem AquilesShield = new DamageItem("Achilles' Shield", true, 2, 10, true);
-            DamageItem chronosScythe = new DamageItem("Chronos' Scythe", true, 2, 13, true);
-            DamageItem zeusLighting = new DamageItem("Zeus' lightning", true, 1, 10, true);
-            DamageItem poseidontrident = new DamageItem("Poseidon's trident", true, 1, 10, true);
 
             //New max HP
-            MaxPotion goldenApple = new MaxPotion("Golden Apple of Discord", true, 1, 15, false);
-            MaxPotion adamantiumShield = new MaxPotion("Adamantium Armor", true, 1, 30, false);
 
 
             //starter kit
@@ -58,16 +49,6 @@ namespace Ex5_MazeGame
             addToBag(sword);
             addToBag(swrod2);
 
-            //found around the map but for trying
-            addToBag(goldenApple);
-            addToBag(adamantiumShield);
-            addToBag(AquilesShield);
-            addToBag(horn);
-            addToBag(pocionAfrodita);
-            addToBag(godSake);
-            addToBag(chronosScythe);
-            addToBag(zeusLighting);
-            addToBag(poseidontrident);
 
 
 
@@ -161,8 +142,6 @@ namespace Ex5_MazeGame
             {
                 if (this.currentRoom.isOpen(direction))
                 {
-                    Console.WriteLine(getCurrentRoom().getConnectedRoom(direction).getName());
-                    Console.WriteLine(maze.getChallengeRoom().getName());
                     Console.WriteLine("///////////////////");
                     if (getCurrentRoom().getConnectedRoom(direction).getName() == maze.getChallengeRoom().getName())
                     {

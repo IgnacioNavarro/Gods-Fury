@@ -69,8 +69,7 @@ namespace Ex5_MazeGame
             if (HP <= 0)
             {
                 MessageBox.Show("You died!");
-                this.mainWindow.Close();
-                Close();
+                Environment.Exit(0);
 
             }
         }
@@ -85,6 +84,11 @@ namespace Ex5_MazeGame
             if (enemyHP <= 0)
             {
                 MessageBox.Show("You killed "+enemy.getName() + "!!");
+                if (maze.getLevel() == 3)
+                {
+                    MessageBox.Show("You escaped with the power of the gods!!");
+                    Environment.Exit(0);
+                }
                 this.mainWindow = new MainWindow(maze, player);
                 this.mainWindow.Visible = true;
                 Close();
