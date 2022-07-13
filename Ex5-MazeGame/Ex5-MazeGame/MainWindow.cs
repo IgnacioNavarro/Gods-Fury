@@ -72,10 +72,6 @@ namespace Ex5_MazeGame
                 {
                     this.playerItems.Items.Add(it);
                 }
-                else
-                {
-                    this.player.deleteFromBag(it);
-                }
             }
 
             int maxHP = this.player.getMaxHP();
@@ -290,7 +286,7 @@ namespace Ex5_MazeGame
                 {
                     if(player.getBag().Count() >= 11)
                     {
-                        MessageBox.Show("Limit reached.");
+                        MessageBox.Show("Limit reached. Dreop something to take this.");
                     }
                     else
                     {
@@ -365,6 +361,10 @@ namespace Ex5_MazeGame
                 {
                     it.Use(player, null);
                     MessageBox.Show("Number of uses of the item left: " + it.getNumberOfUses());
+                    if(it.getNumberOfUses() <= 0)
+                    {
+                        player.deleteFromBag(it);
+                    }
                 }
                 updateRoom();
                 updatePlayer();

@@ -88,11 +88,6 @@ namespace Ex5_MazeGame
                 this.mainWindow = new MainWindow(maze, player);
                 this.mainWindow.Visible = true;
                 Close();
-                if (enemy.getHP() <= 0)
-                {
-                    //player.setCurrentRoom(player.getCurrentRoom().getConnectedRoom('S'));
-
-                }
             }
         }
 
@@ -132,7 +127,6 @@ namespace Ex5_MazeGame
                 }
                 godAttack();
                 updatePlayer();
-                updateEnemy();
 
 
             }

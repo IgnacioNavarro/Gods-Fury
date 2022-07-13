@@ -63,6 +63,7 @@
     <Compile Include="Maze.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="DamageItem.cs" />
+    <Compile Include="MaxPotion.cs" />
     <Compile Include="Potion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,6 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\02e80d6aadf2cf4b080230817d10629f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smite-renders-hades-primary-by-kaiology-d9cor08-smite-hades-11563538199t9f82mplmi.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
