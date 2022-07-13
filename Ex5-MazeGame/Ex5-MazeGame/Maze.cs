@@ -14,14 +14,14 @@ namespace Ex5_MazeGame
         private Room startRoom;
         private Room winningRoom;
         private Room losingRoom;
-        private Room throneRoom = new Room("Zeus' Throne Room", "#FFF", false, false, false, false, false, false, true);        //all doors closed but south
-        private Room armory = new Room("Armory", "#FFF", false, false, false, false, false, false, true);                       //all doors closed but south
+        private Room throneRoom = new Room("Zeus' Throne Room", "#FFF", false, false, false, true);     
+        private Room armory = new Room("Armory", "#FFF", false, false, false, true);                      
         private Room eternalGarden = new Room("Eternal Garden", "#FFF", false, false, false, true);
         private Room hermesDorm = new Room("Hermes' Dormitory", "#FFF", false, false, false, true);
         private Room clockChamb = new Room("Clock's Chamber", "#FFF", false, false, false, true);
         private Room tortureChamber = new Room("Torture Chamber", "#FFF", false, false, false, true);
         private Room kronosSymbol = new Room("Krono's Symbol", "#FFF", false, false, false, true);
-        private Room hallC2 = new Room("Palace's corridors I", "#FFF", false, false, false, false, false, false, true);       //all doors closed but south
+        private Room hallC2 = new Room("Palace's corridors I", "#FFF", false, false, false, true);    
         private Room hallC3 = new Room("Palace's corridors II", "#FFF", false, false, false, true);
         private Room hallC4 = new Room("Palace's corridors III", "#FFF", false, false, false, true);
         private Room hallB4 = new Room("Palace's corridors IV", "#FFF", false, false, false, true);
@@ -91,13 +91,41 @@ namespace Ex5_MazeGame
             Item key = new Item("Flying Key", true,1, false);
 
             Item statue = new Item("Statue", false, 1, false);
-            Item bomb = new Item("Bomb", true,1, false);
+
+            //Potions
+            Potion pocionAfrodita = new Potion("Aphrodite's Heal kiss", true, 1, 11, false);
+            Potion horn = new Potion("horn of plenty", true, 1, 20, false);
+            Potion godSake = new Potion("Gods' Elixir", true, 1, 15, false);
+
+            //Max HP
+            MaxPotion goldenApple = new MaxPotion("Golden Apple of Discord", true, 1, 15, false);
+            MaxPotion adamantiumShield = new MaxPotion("Adamantium Armor", true, 1, 30, false);
+
+            //Weapons
+            DamageItem AquilesShield = new DamageItem("Achilles' Shield", true, 2, 10, true);
+            DamageItem zeusLighting = new DamageItem("Zeus' lightning", true, 1, 10, true);
+            DamageItem chronosScythe = new DamageItem("Chronos' Scythe", true, 2, 13, true);
+            DamageItem poseidontrident = new DamageItem("Poseidon's trident", true, 1, 10, true);
+
+            //Specials
+            Sandals sandals = new Sandals("Herme's Sandals", true, 1, false);
 
 
 
             //placing the items
+            throneRoom.addContent(zeusLighting);
+            kronosSymbol.addContent(chronosScythe);
+            eternalGarden.addContent(goldenApple);
+            armory.addContent(AquilesShield);
 
-            throneRoom.addContent(bomb);
+            acropView.addContent(pocionAfrodita);
+            poseidon.addContent(poseidontrident);
+            thornsPath2.addContent(horn);
+
+            tower.addContent(sandals);
+            heroGrav.addContent(adamantiumShield);
+            undCavesD5.addContent(godSake);
+
 /*
             bathroom.addContent(key);
             bathroom.addContent(coin);
@@ -120,17 +148,17 @@ namespace Ex5_MazeGame
             //armory.setPos(0, 30);
             hallC2.setConnectedRoom(throneRoom, null, armory, hallC3);
             //hallC2.setPos(0, 60);
-            eternalGarden.setConnectedRoom(armory, hallC3, null, hallB4);
+            eternalGarden.setConnectedRoom(armory, null, null, null);
             //eternalGarden.setPos(0, 90);
-            hallC3.setConnectedRoom(hallC2, clockChamb, eternalGarden, hallC4);
+            hallC3.setConnectedRoom(hallC2, null, null, hallC4);
             //hallC3.setPos(0, 120);
-            clockChamb.setConnectedRoom(null, kronosSymbol, hallC3, hallD4);
+            clockChamb.setConnectedRoom(null, kronosSymbol, null, hallD4);
             //clockChamb.setPos(30, 0);
             kronosSymbol.setConnectedRoom(null, null, clockChamb, null);
             //kronosSymbol.setPos(30, 30);
             tortureChamber.setConnectedRoom(null, hallB4, null, null);
             //tortureChamber.setPos(30, 60);
-            hallB4.setConnectedRoom(eternalGarden, hallC4, tortureChamber, hermesDorm);
+            hallB4.setConnectedRoom(null, hallC4, tortureChamber, hermesDorm);
             //hallB4.setPos(30, 90);
             hallC4.setConnectedRoom(hallC3, hallD4, hallB4, null);
             //hallC4.setPos(30, 120);
@@ -186,6 +214,7 @@ namespace Ex5_MazeGame
             gate.setConnectedRoom(witheredPathC3, null, undCavesB4, undCavesC5);
             abyss.setConnectedRoom(undCavesB6, null, null, null);
             deadIsland.setConnectedRoom(null, null, null, exit3);
+            deadIsland.setPos(30, 350);
             exit3.setConnectedRoom(deadIsland, null, null, null);
 
 
@@ -194,6 +223,7 @@ namespace Ex5_MazeGame
             tortureChamber.setMsg("The torture room is full of unbelievable hideous images, decomposing bodies and bloodthirsty torture weapons. You can't help throwing up. You loose 5 hp");
             thornsPath2.setMsg("The thorns of those beautiful roses were poisonous. You get 5 HP damage");
             heroGrav.setMsg("The corpses of all the Heroes who tried to face the gods lay on this Graveyard. Your brother is here too. You loose 5 HP");
+            abyss.setMsg("An abyss stands in front of you, where all the agonic souls are awaiting a new friend to play with. At the other side of the cliff, Hades observes you holding the key that would let you escape. If you just had a flying item you could use to cross the abyss");
 
         }
 
@@ -290,8 +320,6 @@ namespace Ex5_MazeGame
 
         public Room getChallengeRoom()
         {
-
-            Console.WriteLine(level);
             switch (level)
             {
                 case 1:

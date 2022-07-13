@@ -85,12 +85,12 @@ namespace Ex5_MazeGame
             if(HP <= 0)
             {
                 MessageBox.Show("You died!");
-                Close();
+                Environment.Exit(0);
             }
 
         }
 
-        private void updateRoom()
+        public void updateRoom()
         {
 
             this.currentRoom.Text = this.player.getCurrentRoom().getName();
@@ -139,34 +139,7 @@ namespace Ex5_MazeGame
                 /**/
                 player.setCurrentRoom(player.getCurrentRoom().getConnectedRoom(direction));
                 this.updateRoom();
-                if (player.getCurrentRoom() == maze.getWinningRoom())
-                {
-                    if (maze.getLevel() < 2)
-                    {
-
-                        //maze.nextLevel();
-                        //player.getMaze().nextLevel();
-                        //player.setCurrentRoom(maze.getStartRoom());
-                        // TODO : close window and open again
-
-                        //this.Visible = false;
-
-                        //MessageBox.Show("You escaped... for now");
-
-                        //this.Visible = true;
-                        //this.updateRoom();
-
-                    } else
-                    {
-                        MessageBox.Show("You win!");
-                        this.Close();
-                    }
-
-
-
-
-                }
-                else if (player.getCurrentRoom() == maze.getLosingRoom())
+                if (player.getCurrentRoom() == maze.getLosingRoom())
                 {
                     MessageBox.Show(maze.getLosingRoom().getMsg());
                     this.player.getDamage(5);
@@ -175,6 +148,14 @@ namespace Ex5_MazeGame
                 else
                 {
 
+                }
+
+                if(player.getCurrentRoom().getName()== "Forgotten's Abyss")
+                {
+                    //MessageBox.Show(player.getCurrentRoom().getMsg());
+                    MessageBox.Show("An abyss stands in front of you, where all the agonic souls are awaiting a new friend to play with.");
+                    MessageBox.Show("At the other side of the cliff, Hades observes you holding the key that would let you escape.");
+                    MessageBox.Show("If you just had a flying item you could use to cross the abyss");
                 }
             }
             else if (move == "wall")
@@ -207,6 +188,11 @@ namespace Ex5_MazeGame
 
             player.getCurrentRoom().draw(map);
 
+        }
+
+        public void setVisible(bool vis)
+        {
+            this.Visible = vis;
         }
 
         public void draw(char direction)
