@@ -94,6 +94,14 @@ namespace Ex5_MazeGame
 
             if (move == "open")
             {
+                if (player.getCurrentRoom().getConnectedRoom(direction)==maze.getHealingRoom() && !player.getCurrentRoom().getConnectedRoom(direction).getVisited())
+                {
+                    MessageBox.Show("This place was one of Hermes' favourite places to rest");
+                    MessageBox.Show("Hermes' cult is here adoring his figure, it looks like he is not here");
+                    MessageBox.Show("The cult healed you 10 HP!");
+                    player.getHeal(10);
+                    updatePlayer();
+                }
                 draw(direction);
                 player.getCurrentRoom().drawPast(map);
                 /**/
@@ -128,7 +136,7 @@ namespace Ex5_MazeGame
                 }
                 else if (player.getCurrentRoom() == maze.getLosingRoom())
                 {
-                    MessageBox.Show("The torture room is full of unbelievable hideous images, decomposing bodies and bloodthirsty torture weapons. You can't help throwing up. You loose 5 hp");
+                    MessageBox.Show(maze.getLosingRoom().getMsg());
                     this.player.getDamage(5);
                     updatePlayer();
                 }
@@ -163,6 +171,8 @@ namespace Ex5_MazeGame
             }
 
 
+
+
             player.getCurrentRoom().draw(map);
 
         }
@@ -184,6 +194,7 @@ namespace Ex5_MazeGame
                     player.getCurrentRoom().getConnectedRoom(direction).setPos(player.getCurrentRoom().getPos()[0] - 40, player.getCurrentRoom().getPos()[1]);
                     break;
             }
+            player.getCurrentRoom().getConnectedRoom(direction).setVisited();
         }
 
         //

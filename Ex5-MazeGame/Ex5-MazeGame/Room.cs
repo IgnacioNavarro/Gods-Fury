@@ -12,6 +12,7 @@ namespace Ex5_MazeGame
         private Room westRoom;
         private Room eastRoom;
         private string name;
+        private string msg;
         private string paint = "#000";
         private bool NisOpened;
         private bool EisOpened;
@@ -20,6 +21,7 @@ namespace Ex5_MazeGame
         private bool lights;
         private bool enemies;
         private bool chest;
+        private bool visited;
         private List<Item> content;
         private List<int> pos;
 
@@ -37,6 +39,8 @@ namespace Ex5_MazeGame
             this.paint = paint ;
             this.content = new List<Item>();
             pos = new List<int>();
+            visited = false;
+            msg = "";
         }
         public Room(string name, string paint, bool lights, bool enemies, bool chest, bool NisOpened, bool EisOpened, bool WisOpened, bool SisOpened)
         {
@@ -51,6 +55,28 @@ namespace Ex5_MazeGame
             this.paint = paint;
             this.content = new List<Item>();
             pos= new List<int>();
+            visited = false;
+            msg = "";
+        }
+
+        public String getMsg()
+        {
+            return msg;
+        }
+
+        public void setMsg(string message)
+        {
+            msg = message;
+        }
+
+        public bool getVisited()
+        {
+            return visited;
+        }
+
+        public void setVisited()
+        {
+            visited = true;
         }
 
         public void setPos(int x, int y)
