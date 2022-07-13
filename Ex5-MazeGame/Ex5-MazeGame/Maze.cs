@@ -43,17 +43,42 @@ namespace Ex5_MazeGame
         private Room mounPathC3 = new Room("Path of the Mountain", "#FFF", false, false, false, true);
         private Room mounPathC4 = new Room("Path of the Mountain", "#FFF", false, false, false, true);
         private Room mounPathC5 = new Room("Path of the Mountain", "#FFF", false, false, false, true);
-        private Room thornsPath1 = new Room("Path of the Mountain", "#FFF", false, false, false, true);
-        private Room thornsPath2 = new Room("Path of the Mountain", "#FFF", false, false, false, true);
-        private Room flowersPath1 = new Room("Path of the Mountain", "#FFF", false, false, false, true);
-        private Room flowersPath2 = new Room("Path of the Mountain", "#FFF", false, false, false, true);
+        private Room thornsPath1 = new Room("Thorns Path", "#FFF", false, false, false, true);
+        private Room thornsPath2 = new Room("Thorns Path", "#FFF", false, false, false, true);
+        private Room flowersPath1 = new Room("Flowers Path", "#FFF", false, false, false, true);
+        private Room flowersPath2 = new Room("Flowers Path", "#FFF", false, false, false, true);
         private Room poseidon = new Room("Poseidon's Cliff", "#FFF", false, false, false, true);
-        private Room abandHouse = new Room("One simple abandoned house", "#FFF", false, false, false, true);
+        private Room abandHouse = new Room("Abandoned house", "#FFF", false, false, false, true);
         private Room gardBehind = new Room("Garden behind the house", "#FFF", false, false, false, true);
         private Room graveyard = new Room("Graveyard", "#FFF", false, false, false, true);
         private Room acropView = new Room("View of the Akropolis", "#FFF", false, false, false, true);
         private Room stadium = new Room("Atena's Stadium", "#FFF", false, false, false, true);
         private Room exit2 = new Room("Exit", "#FFF", false, false, false, true);
+
+        ///////////////////////////////////////////             //////////            //////////////////////////////////////////////////
+
+
+        ///////////////////////////////////////////             3rd maze            //////////////////////////////////////////////////
+
+        private Room witheredPathB1 = new Room("Withered Path", "#FFF", false, false, false, true);
+        private Room witheredPathC1 = new Room("Withered Path", "#FFF", false, false, false, true);
+        private Room witheredPathD1 = new Room("Withered Path", "#FFF", false, false, false, true);
+        private Room witheredPathB2 = new Room("Withered Path", "#FFF", false, false, false, true);
+        private Room witheredPathD2 = new Room("Withered Path", "#FFF", false, false, false, true);
+        private Room witheredPathC3 = new Room("Withered Path", "#FFF", false, false, false, true);
+        private Room witheredPathD3 = new Room("Withered Path", "#FFF", false, false, false, true);
+        private Room undCavesB4 = new Room("Underworld's Caves", "#FFF", false, false, false, true);
+        private Room undCavesC5 = new Room("Underworld's Caves", "#FFF", false, false, false, true);
+        private Room undCavesD5 = new Room("Underworld's Caves", "#FFF", false, false, false, true);
+        private Room undCavesC6 = new Room("Underworld's Caves", "#FFF", false, false, false, true);
+        private Room undCavesB6 = new Room("Underworld's Caves", "#FFF", false, false, false, true);
+        private Room heroGrav = new Room("Heroe's Graveyard", "#FFF", false, false, false, true);
+        private Room tower = new Room("Tower of Skulls", "#FFF", false, false, false, true);
+        private Room gate = new Room("Hade's Domain's Gate", "#FFF", false, false, false, true);
+        private Room abyss = new Room("Forgotten's Abyss", "#FFF", false, false, false, true);
+        private Room deadIsland = new Room("Dead Island", "#FFF", false, false, false, true);
+        private Room exit3 = new Room("Exit", "#FFF", false, false, false, true);
+
 
         ///////////////////////////////////////////             //////////            //////////////////////////////////////////////////
 
@@ -139,6 +164,36 @@ namespace Ex5_MazeGame
             acropView.setConnectedRoom(mounPathD2, null, null, null);
             gardBehind.setConnectedRoom(abandHouse, null, null, null);
             stadium.setConnectedRoom(null, flowersPath2, thornsPath2, exit2);
+
+
+            // Set connections MAZE 3
+
+            witheredPathB1.setConnectedRoom(null, witheredPathC1, null, witheredPathB2);  //      UP      RIGHT       LEFT        DOWN
+            witheredPathC1.setConnectedRoom(null, witheredPathD1, witheredPathB1, null);
+            witheredPathD1.setConnectedRoom(null, null, witheredPathC1, witheredPathD2);
+            witheredPathB2.setConnectedRoom(witheredPathB1, heroGrav, null, null);
+            witheredPathD2.setConnectedRoom(witheredPathD1, null, null, witheredPathD3);
+            witheredPathC3.setConnectedRoom(null, witheredPathD3, null, gate);
+            witheredPathD3.setConnectedRoom(witheredPathD2, null, witheredPathC3, null);
+            undCavesB4.setConnectedRoom(null, gate, tower, null);
+            undCavesC5.setConnectedRoom(gate, undCavesD5, null, undCavesC6);
+            undCavesD5.setConnectedRoom(null, null, undCavesC5, null);
+            undCavesC6.setConnectedRoom(undCavesC5, null, undCavesB6, null);
+            undCavesB6.setConnectedRoom(null, undCavesC5, null, null);
+            heroGrav.setConnectedRoom(null, null, witheredPathB2, null);
+            tower.setConnectedRoom(null, undCavesB4, null, null);
+            gate.setConnectedRoom(witheredPathC3, null, undCavesB4, undCavesC5);
+            abyss.setConnectedRoom(undCavesB6, null, null, null);
+            deadIsland.setConnectedRoom(null, null, null, exit3);
+            exit3.setConnectedRoom(deadIsland, null, null, null);
+
+
+            //  Setting Messages
+
+            tortureChamber.setMsg("The torture room is full of unbelievable hideous images, decomposing bodies and bloodthirsty torture weapons. You can't help throwing up. You loose 5 hp");
+            thornsPath2.setMsg("The thorns of those beautiful roses were poisonous. You get 5 HP damage");
+            heroGrav.setMsg("The corpses of all the Heroes who tried to face the gods lay on this Graveyard. Your brother is here too. You loose 5 HP");
+
         }
 
         public void updateMap(System.Drawing.Graphics map, System.Drawing.SolidBrush pen, List<int> pos)
@@ -171,7 +226,25 @@ namespace Ex5_MazeGame
                     return this.mounPathA1;
 
                 case 3:
-                    return null;
+                    return witheredPathD1;
+
+                default:
+                    return this.throneRoom;
+            }
+        }
+
+        public Room getHealingRoom()
+        {
+            switch (level)
+            {
+                case 1:
+                    return this.hermesDorm;
+
+                case 2:
+                    return this.gardBehind;
+
+                case 3:
+                    return this.tower;
 
                 default:
                     return this.throneRoom;
@@ -189,7 +262,7 @@ namespace Ex5_MazeGame
                     return this.exit2;
 
                 case 3:
-                    return null;
+                    return this.exit3;
 
                 default:
                     return this.exit;
@@ -198,7 +271,20 @@ namespace Ex5_MazeGame
 
         public Room getLosingRoom()
         {
-            return this.losingRoom;
+            switch (level)
+            {
+                case 1:
+                    return this.tortureChamber;
+
+                case 2:
+                    return this.thornsPath2;
+
+                case 3:
+                    return this.heroGrav;
+
+                default:
+                    return this.tortureChamber;
+            }
         }
 
         public Room getChallengeRoom()
@@ -214,7 +300,7 @@ namespace Ex5_MazeGame
                     return this.stadium;
 
                 case 3:
-                    return null;
+                    return deadIsland;
 
                 default:
                     return this.zeusChallenge;
