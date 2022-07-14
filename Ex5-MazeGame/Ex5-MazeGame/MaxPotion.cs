@@ -17,6 +17,7 @@ namespace Ex5_MazeGame
             this.numberOfUses = numerOfUses;
             this.healPoints = healpoints;
             this.onEnemy = onEnemy;
+            this.description = "This item heals you and increases your max hp by " + healpoints + ". It can be used up to " + numerOfUses + " times.";
 
         }
         public override void Use(Player user, Enemy enemy)
@@ -28,6 +29,10 @@ namespace Ex5_MazeGame
             {
                 numberOfUses--;
             }
+        }
+        public override string getDescription()
+        {
+            return this.description;
         }
     }
 }

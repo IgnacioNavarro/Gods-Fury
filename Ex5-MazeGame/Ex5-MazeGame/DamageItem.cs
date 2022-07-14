@@ -18,6 +18,7 @@ namespace Ex5_MazeGame
             this.numberOfUses = numerOfUses;
             this.damagePoints = damagePoints;
             this.onEnemy = true;
+            this.description = "This item deals " + damagePoints + " damage and can be used up to " + numerOfUses + " times.";
 
         }
         public override void Use(Player user, Enemy enemy)
@@ -28,6 +29,10 @@ namespace Ex5_MazeGame
             {
                 numberOfUses--;
             }
+        }
+        public override string getDescription()
+        {
+            return this.description;
         }
     }
 }

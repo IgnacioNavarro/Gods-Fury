@@ -15,6 +15,7 @@ namespace Ex5_MazeGame
             this.visible = true;
             this.numberOfUses = numerOfUses;
             this.onEnemy = false;
+            this.description = "This flying sandals were one of the God Herme's most precious possessions. Maybe you can find any utility for them";
 
         }
 
@@ -40,6 +41,10 @@ namespace Ex5_MazeGame
                 System.Windows.Forms.MessageBox.Show("Remember prof. Rowan's words: there's a time and place for everything! But not now.");
             }
             
+        }
+        public override string getDescription()
+        {
+            return this.description;
         }
     }
 }

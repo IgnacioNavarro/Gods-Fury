@@ -374,5 +374,18 @@ namespace Ex5_MazeGame
 
             }
         }
+
+        private void infoButton_Click(object sender, EventArgs e)
+        {
+            Item it = (Item)this.playerItems.SelectedItem;
+            if (it == null)
+            {
+                MessageBox.Show("Select an item!");
+            }
+            else
+            {
+                MessageBox.Show(it.getDescription());
+            }
+        }
     }
 }
