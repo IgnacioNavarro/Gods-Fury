@@ -142,7 +142,6 @@ namespace Ex5_MazeGame
             {
                 if (this.currentRoom.isOpen(direction))
                 {
-                    Console.WriteLine("///////////////////");
                     if (getCurrentRoom().getConnectedRoom(direction).getName() == maze.getChallengeRoom().getName())
                     {
                         return "challenge";

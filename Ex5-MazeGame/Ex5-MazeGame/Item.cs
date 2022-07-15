@@ -14,6 +14,7 @@ namespace Ex5_MazeGame
         protected bool visible;
         protected int numberOfUses;
         protected bool onEnemy;
+        protected string description;
 
         public Item (string name, bool pickable, int numerOfUses, bool onEnemy)
         {
@@ -22,6 +23,7 @@ namespace Ex5_MazeGame
             this.visible = true;
             this.numberOfUses = numerOfUses;
             this.onEnemy = onEnemy;
+            this.description = "";
         }
 
         public Item(string name, bool pickable, bool visible)
@@ -29,6 +31,11 @@ namespace Ex5_MazeGame
             this.name=name;
             this.pickable = pickable;
             this.visible = visible;
+        }
+
+        public virtual string getDescription()
+        {
+            return this.description;
         }
 
         public string Name { 

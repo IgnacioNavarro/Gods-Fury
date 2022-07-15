@@ -50,13 +50,14 @@ namespace Ex5_MazeGame
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.hpLabel = new System.Windows.Forms.Label();
+            this.infoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // northButton
             // 
             this.northButton.Location = new System.Drawing.Point(411, 190);
-            this.northButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.northButton.Margin = new System.Windows.Forms.Padding(2);
             this.northButton.Name = "northButton";
             this.northButton.Size = new System.Drawing.Size(56, 61);
             this.northButton.TabIndex = 0;
@@ -67,7 +68,7 @@ namespace Ex5_MazeGame
             // westButton
             // 
             this.westButton.Location = new System.Drawing.Point(345, 252);
-            this.westButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.westButton.Margin = new System.Windows.Forms.Padding(2);
             this.westButton.Name = "westButton";
             this.westButton.Size = new System.Drawing.Size(56, 61);
             this.westButton.TabIndex = 1;
@@ -78,7 +79,7 @@ namespace Ex5_MazeGame
             // eastButton
             // 
             this.eastButton.Location = new System.Drawing.Point(475, 252);
-            this.eastButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.eastButton.Margin = new System.Windows.Forms.Padding(2);
             this.eastButton.Name = "eastButton";
             this.eastButton.Size = new System.Drawing.Size(56, 61);
             this.eastButton.TabIndex = 2;
@@ -89,7 +90,7 @@ namespace Ex5_MazeGame
             // southButton
             // 
             this.southButton.Location = new System.Drawing.Point(411, 314);
-            this.southButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.southButton.Margin = new System.Windows.Forms.Padding(2);
             this.southButton.Name = "southButton";
             this.southButton.Size = new System.Drawing.Size(56, 61);
             this.southButton.TabIndex = 3;
@@ -188,7 +189,7 @@ namespace Ex5_MazeGame
             // 
             this.playerItems.FormattingEnabled = true;
             this.playerItems.Location = new System.Drawing.Point(20, 218);
-            this.playerItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playerItems.Margin = new System.Windows.Forms.Padding(2);
             this.playerItems.Name = "playerItems";
             this.playerItems.Size = new System.Drawing.Size(122, 121);
             this.playerItems.TabIndex = 12;
@@ -198,7 +199,7 @@ namespace Ex5_MazeGame
             // 
             this.roomItems.FormattingEnabled = true;
             this.roomItems.Location = new System.Drawing.Point(220, 218);
-            this.roomItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roomItems.Margin = new System.Windows.Forms.Padding(2);
             this.roomItems.Name = "roomItems";
             this.roomItems.Size = new System.Drawing.Size(122, 121);
             this.roomItems.TabIndex = 13;
@@ -207,7 +208,7 @@ namespace Ex5_MazeGame
             // dropButton
             // 
             this.dropButton.Location = new System.Drawing.Point(154, 246);
-            this.dropButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dropButton.Margin = new System.Windows.Forms.Padding(2);
             this.dropButton.Name = "dropButton";
             this.dropButton.Size = new System.Drawing.Size(56, 19);
             this.dropButton.TabIndex = 14;
@@ -218,7 +219,7 @@ namespace Ex5_MazeGame
             // pickUpButton
             // 
             this.pickUpButton.Location = new System.Drawing.Point(154, 294);
-            this.pickUpButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pickUpButton.Margin = new System.Windows.Forms.Padding(2);
             this.pickUpButton.Name = "pickUpButton";
             this.pickUpButton.Size = new System.Drawing.Size(56, 19);
             this.pickUpButton.TabIndex = 15;
@@ -228,8 +229,8 @@ namespace Ex5_MazeGame
             // 
             // useButton
             // 
-            this.useButton.Location = new System.Drawing.Point(40, 352);
-            this.useButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.useButton.Location = new System.Drawing.Point(20, 352);
+            this.useButton.Margin = new System.Windows.Forms.Padding(2);
             this.useButton.Name = "useButton";
             this.useButton.Size = new System.Drawing.Size(56, 19);
             this.useButton.TabIndex = 16;
@@ -267,11 +268,23 @@ namespace Ex5_MazeGame
             this.hpLabel.Text = "HP: ";
             this.hpLabel.Click += new System.EventHandler(this.label7_Click);
             // 
+            // infoButton
+            // 
+            this.infoButton.Location = new System.Drawing.Point(86, 352);
+            this.infoButton.Margin = new System.Windows.Forms.Padding(2);
+            this.infoButton.Name = "infoButton";
+            this.infoButton.Size = new System.Drawing.Size(56, 19);
+            this.infoButton.TabIndex = 19;
+            this.infoButton.Text = "Info";
+            this.infoButton.UseVisualStyleBackColor = true;
+            this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 408);
+            this.Controls.Add(this.infoButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.hpLabel);
@@ -292,7 +305,7 @@ namespace Ex5_MazeGame
             this.Controls.Add(this.eastButton);
             this.Controls.Add(this.westButton);
             this.Controls.Add(this.northButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(972, 447);
             this.MinimumSize = new System.Drawing.Size(972, 447);
             this.Name = "MainWindow";
@@ -327,6 +340,7 @@ namespace Ex5_MazeGame
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label hpLabel;
+        private System.Windows.Forms.Button infoButton;
     }
 }
 
